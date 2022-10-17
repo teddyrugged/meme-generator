@@ -7,13 +7,15 @@ import { ToastProvider } from 'react-toast-notifications';
 function App() {
   return (
     <ToastProvider>
-    <ErrorBoundry>
-      <div className="App">
-        <Routes />
-      </div>
-    </ErrorBoundry>
+      <ErrorBoundry>
+        <div className="App">
+          <Routes />
+        </div>
+      </ErrorBoundry>
     </ToastProvider>
   );
 }
 
 export default App;
+// yarn add react-toast-notifications
+// npm install react-router-dom
