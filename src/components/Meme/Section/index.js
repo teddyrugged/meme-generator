@@ -1,26 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react';
 // import { useNavigate } from 'react-router-dom';
-import IMG from '../images/memeimg.svg';
-import "../meme.css"
+// import IMG from '../images/memeimg.svg';
+import memesData from "../memeData";
+import "../meme.css";
 
-const section = () => {
-    // const handleClick = (e) => {
-    //     console.log('i was clicked')
-    //   };
+const Section = () => {
+  const [memeImage, setMemeImage] = useState( );
 
+    const getMemeImage =()=> {
+       const memesArray = memesData.data.memes
+       const randomNumber = Math.floor(Math.random() * memesArray.length)
+       setMemeImage(memesArray[randomNumber].url)
+
+  }
   return (
     <main>
       <form className='body--full'>
-            <input  className= "input--1" type="text"  name="fname"></input>
-            <input className= "input--1" type="text" name="fname"></input>
-            <button onClick={() => ("page")}>Get a new meme image!</button>
-            <img src={ IMG } alt = "a pic" className="an--image" />
+            <input  className= "input--1" type="text"  placeholder="Top text"></input>
+            <input className= "input--1" type="text" placeholder="Buttom text"></input>
+            <button onClick={getMemeImage}>Get a new meme image!</button>
+            <img src={ memeImage } alt = "a pic" className="an--image" />
 
       </form>
+      {/* <img src={memeImage} className = 'img--link'  /> */}
 
     </main>
 
   )
 }
 
-export default section
+export default Section
