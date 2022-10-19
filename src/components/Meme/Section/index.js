@@ -5,7 +5,7 @@ import memesData from "../memeData";
 import "../meme.css";
 
 const Section = () => {
-  const [memeImage, setMemeImage] = useState( );
+  const [memeImage, setMemeImage] = useState('');
 
     const getMemeImage =()=> {
        const memesArray = memesData.data.memes
@@ -19,10 +19,10 @@ const Section = () => {
             <input  className= "input--1" type="text"  placeholder="Top text"></input>
             <input className= "input--1" type="text" placeholder="Buttom text"></input>
             <button onClick={getMemeImage}>Get a new meme image!</button>
-            <img src={ memeImage } alt = "a pic" className="an--image" />
+            {/* <img src={ memeImage } alt = "a pic" className="an--image" /> */}
 
       </form>
-      {/* <img src={memeImage} className = 'img--link'  /> */}
+      <img src={memeImage} alt = "a pic" className = 'img--link'  />
 
     </main>
 
